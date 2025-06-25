@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden"
+      style="--select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(78,122,151)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e'); font-family: Lexend, 'Noto Sans', sans-serif;"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header -->
+        <header class="flex items-center justify-between border-b border-solid border-b-[#e7eef3] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0e161b]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-[#0e161b] text-lg font-bold leading-tight tracking-[-0.015em]">MyMedi</h2>
+          </div>
+          <div class="flex items-center gap-8">
+            <a class="text-[#0e161b] text-sm font-medium leading-normal" href="/reg/admin">Hospital Admin</a>
+          </div>
+        </header>
+
+        <!-- Centered Content -->
+        <div class="flex flex-1 items-center justify-center px-4 py-6">
+          <div class="layout-content-container w-full max-w-[512px] py-5">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0e161b] tracking-light text-[32px] font-bold leading-tight min-w-72">Patient Registration</p>
+            </div>
+
+            <!-- First and Last Name -->
+             <form method="post">
+            <div class="flex flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">First Name</p>
+                <input name="fname" placeholder="Enter first name" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+              </label>
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">Last Name</p>
+                <input name='lname' placeholder="Enter last name" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+              </label>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">Date of Birth</p>
+                <input name="dob" type='date' placeholder="DD/MM/YYYY" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+              </label>
+            </div>
+
+            <!-- Gender -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">Gender</p>
+                <select name="gender" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0 bg-[image:--select-button-svg]">
+                  <option value=""></option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="none">Prefer Not to Tell</option>
+                </select>
+              </label>
+            </div>
+
+            <!-- Password -->
+<div class="flex flex-wrap items-end gap-4 px-4 py-3">
+  <label class="flex flex-col flex-1 min-w-40">
+    <p class="text-[#0e161b] text-base font-medium pb-2">Password</p>
+    <input name="password" type="password" placeholder="Enter password" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+  </label>
+</div>
+
+<!-- Confirm Password -->
+<div class="flex flex-wrap items-end gap-4 px-4 py-3">
+  <label class="flex flex-col flex-1 min-w-40">
+    <p class="text-[#0e161b] text-base font-medium pb-2">Confirm Password</p>
+    <input name="confirmPassword" type="password" placeholder="Re-enter password" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+  </label>
+</div>
+            <!-- Address -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">Address</p>
+                <input name="address" placeholder="Enter address" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+              </label>
+            </div>
+
+            <!-- City and State -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">City</p>
+                <input name="city" placeholder="Enter city" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+              </label>
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">State</p>
+                <input name='state' placeholder="Enter state" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+              </label>
+            </div>
+
+            <!-- Zip -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">Zip Code</p>
+                <input name="zipcode" placeholder="Enter zip code" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+              </label>
+            </div>
+            
+            <!-- Phone -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">Phone Number</p>
+                <input name="number" placeholder="(XXX) XXX-XXXX" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+              </label>
+            </div>
+
+            <!-- Email -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col flex-1 min-w-40">
+                <p class="text-[#0e161b] text-base font-medium pb-2">Email</p>
+                <input name="email" placeholder="Enter email" class="form-input rounded-lg h-14 p-4 text-base font-normal leading-normal text-[#0e161b] placeholder:text-[#4e7a97] bg-[#e7eef3] border-none focus:outline-0 focus:ring-0" />
+              </label>
+            </div>
+
+            <!-- Button -->
+            <div class="flex px-4 py-3 justify-end">
+              <button class="rounded-lg h-10 px-4 bg-[#1993e5] text-slate-50 text-sm font-bold tracking-[0.015em]">
+                <span class="truncate">Register</span>
+              </button>
+            </div>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

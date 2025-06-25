@@ -1,0 +1,164 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eef3] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0e161b]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-[#0e161b] text-lg font-bold leading-tight tracking-[-0.015em]">MyMedi</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOwldVPZNhdxV6h4scKQ0lHQpjaMdQhG9SEfCr2WnGJ0l4-VVAU6svmw8JlHEKGBfh65NlOLlLrftc4YAkY2UaF4_pi8U71wsWQSfpf7vz3YJM88qR_VbLso56dDR7A9ZhZ_H_m2ynRyaTSK8uobFDjGY34xu6nw2V9LYN3cuQOuSmOs6QCuQTW7FeOOHxYZzdvuGY7XgD4S3bMRvN59uXqELQd18b7B8PEBhIDzjivCLhQI2LKynEsnlPy8MFJelPhFRyTniYMQM");'
+            ></div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0e161b] tracking-light text-[32px] font-bold leading-tight min-w-72">Welcome back, {{name}}</p>
+            </div>
+            <h2 class="text-[#0e161b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">My Consultations</h2>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-xl border border-[#d0dee7] bg-slate-50">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-slate-50">
+                      <th class="table-a4b6f173-bdcc-40d7-b484-1e86564f8614-column-120 px-4 py-3 text-left text-[#0e161b] w-[400px] text-sm font-medium leading-normal">
+                        Doctor Name
+                      </th>
+                      <th class="table-a4b6f173-bdcc-40d7-b484-1e86564f8614-column-240 px-4 py-3 text-left text-[#0e161b] w-[400px] text-sm font-medium leading-normal">Date</th>
+                      <th class="table-a4b6f173-bdcc-40d7-b484-1e86564f8614-column-240 px-4 py-3 text-left text-[#0e161b] w-[400px] text-sm font-medium leading-normal">Status</th>
+                      <th class="table-a4b6f173-bdcc-40d7-b484-1e86564f8614-column-360 px-4 py-3 text-left text-[#0e161b] w-60 text-[#4e7a97] text-sm font-medium leading-normal">
+                        Access
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody">
+                    
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:120px){.table-a4b6f173-bdcc-40d7-b484-1e86564f8614-column-120{display: none;}}
+                @container(max-width:240px){.table-a4b6f173-bdcc-40d7-b484-1e86564f8614-column-240{display: none;}}
+                @container(max-width:360px){.table-a4b6f173-bdcc-40d7-b484-1e86564f8614-column-360{display: none;}}
+              </style>
+            </div>
+            <h2 class="text-[#0e161b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Pick a Doctor to Consult</h2>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-xl border border-[#d0dee7] bg-slate-50">
+                <table class="flex-1" id="doctor-table">
+                  <thead>
+                    <tr class="bg-slate-50">
+                      <th class="table-cfc7b730-1da0-4d12-9096-37c5acfed293-column-120 px-4 py-3 text-left text-[#0e161b] w-[400px] text-sm font-medium leading-normal">Doctor</th>
+                      <th class="table-cfc7b730-1da0-4d12-9096-37c5acfed293-column-360 px-4 py-3 text-left text-[#0e161b] w-[400px] text-sm font-medium leading-normal">
+                        Availability
+                      </th>
+                      <th class="table-cfc7b730-1da0-4d12-9096-37c5acfed293-column-480 px-4 py-3 text-left text-[#0e161b] w-60 text-[#4e7a97] text-sm font-medium leading-normal">
+                        Action
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="doctor-body">
+                    
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:120px){.table-cfc7b730-1da0-4d12-9096-37c5acfed293-column-120{display: none;}}
+                @container(max-width:240px){.table-cfc7b730-1da0-4d12-9096-37c5acfed293-column-240{display: none;}}
+                @container(max-width:360px){.table-cfc7b730-1da0-4d12-9096-37c5acfed293-column-360{display: none;}}
+                @container(max-width:480px){.table-cfc7b730-1da0-4d12-9096-37c5acfed293-column-480{display: none;}}
+              </style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+    var docs = `{{docs}}`;
+    var doctors = JSON.parse(atob(docs));
+    const tbody = document.getElementById("doctor-body");
+
+    doctors.forEach(doc => {
+        const tr = document.createElement("tr");
+        tr.className = "border-t border-t-[#d0dee7]";
+
+        tr.innerHTML = `
+            <td class="h-[72px] px-4 py-2 w-[400px] text-[#0e161b] text-sm font-normal leading-normal">
+                Dr. ${doc.username}
+            </td>
+            <td class="h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                Available
+            </td>
+            <td class="h-[72px] px-4 py-2 w-60 text-[#4e7a97] text-sm font-bold leading-normal tracking-[0.015em]">
+                <form  method="POST">
+                <input type="hidden" name="doctor_id" value="${doc.id}" />
+                <input type="hidden" name="doctor_name" value="${doc.username}" />
+                <button type="submit" class="bg-[#4e7a97] text-white px-3 py-1 rounded-md hover:bg-[#3b5e77] transition-all text-sm">
+                    Book
+                </button>
+                </form>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    var pats = `{{pats}}`;
+    var sessions = JSON.parse(atob(pats));
+
+    const tbosdy = document.querySelector("table.flex-1 tbody");
+
+  sessions.forEach((session) => {
+    const tr = document.createElement("tr");
+    tr.className = "border-t border-t-[#d0dee7]";
+
+    const readableDate = new Date(session.created_at).toLocaleDateString("en-GB");
+
+    tr.innerHTML = `
+      <td class="h-[72px] px-4 py-2 w-[400px] text-[#0e161b] text-sm font-normal leading-normal">
+        Dr. ${session.doc_name}
+      </td>
+      <td class="h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+        ${readableDate}
+      </td>
+      <td class="h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+        ${session.status ? "Active" : "Completed"}
+      </td>
+      <td class="h-[72px] px-4 py-2 w-60 text-[#4e7a97] text-sm font-bold leading-normal tracking-[0.015em]">
+        <form action="/view-session" method="POST">
+          <a href="/consultation/${session.session_reference_id}" class="bg-[#4e7a97] text-white px-3 py-1 rounded-md hover:bg-[#3b5e77] transition-all text-sm">
+            View
+          </a>
+        </form>
+      </td>
+    `;
+
+    tbosdy.appendChild(tr);
+  });
+</script>
